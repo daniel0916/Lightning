@@ -8,11 +8,11 @@ function HandleLightningCommand(Split, Player)
 	if #Split == 1 then
 		Player:GetWorld():CastThunderbolt(GetBlockXYZFromTrace(Player))
 	elseif #Split == 2 then
-		if Player:GetWorld():DoWithPlayer(Split[2],
+		if not Player:GetWorld():DoWithPlayer(Split[2],
 			function(a_Player)
 				a_Player:GetWorld():CastThunderbolt(a_Player:GetPosX(), a_Player:GetPosY(), a_Player:GetPosZ())
 			end
-		) == false then
+		) then
 			Player:SendMessage(cChatColor.Rose .. "Player couldn't be found.")
 			return true
 		end
