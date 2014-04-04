@@ -3,7 +3,7 @@ function Initialize(Plugin)
     Plugin:SetVersion(1);
 	
 	local PluginManager = cRoot:Get():GetPluginManager();
-    PluginManager:BindCommand("/lightning", 	"lightning.use", 	HandleLightningCommand, 	 " - Create Lightnings");
+    PluginManager:BindCommand("/lightning", 	"", 	HandleLightningCommand, 	 " - Create Lightnings");
 	
 	cPluginManager.AddHook(cPluginManager.HOOK_PLAYER_RIGHT_CLICK, OnPlayerRightClick)
 	
